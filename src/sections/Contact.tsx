@@ -19,13 +19,13 @@ export function Contact() {
   ]
 
   return (
-    <Section id="contact" title="Contact">
+    <Section id="contact" index="05" title="Contact">
       <p className="max-w-xl text-base leading-relaxed text-ink-600">{profile.openTo}</p>
 
       <dl className="mt-6 space-y-3">
         {links.map((link) => (
           <div key={link.value} className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-            <dt className="w-20 shrink-0 text-ink-400">{link.label}</dt>
+            <dt className="w-20 shrink-0 font-mono text-xs text-ink-400">{link.label}</dt>
             <dd>
               <a
                 href={link.href}

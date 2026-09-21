@@ -1,26 +1,53 @@
 @import 'tailwindcss';
 
 /*
- * One neutral for text and chrome, one accent for anything clickable. Money
- * colours have no place on a page that is not showing money.
+ * One neutral for text and chrome, one accent for anything clickable. Colours
+ * are variables rather than fixed utilities so the dark theme is a different
+ * set of values, not a second set of classes on every element.
  */
 @theme {
   --color-paper: oklch(0.99 0.003 106);
+  --color-card: oklch(1 0 0);
   --color-ink-100: oklch(0.95 0.004 265);
   --color-ink-200: oklch(0.89 0.006 265);
   --color-ink-300: oklch(0.81 0.008 265);
-  --color-ink-400: oklch(0.65 0.012 265);
-  --color-ink-600: oklch(0.49 0.014 265);
-  --color-ink-800: oklch(0.29 0.016 265);
-  --color-ink-900: oklch(0.2 0.018 265);
+  --color-ink-400: oklch(0.63 0.012 265);
+  --color-ink-600: oklch(0.47 0.014 265);
+  --color-ink-800: oklch(0.28 0.016 265);
+  --color-ink-900: oklch(0.19 0.018 265);
 
-  --color-accent-50: oklch(0.96 0.019 245);
+  --color-accent-100: oklch(0.93 0.035 245);
   --color-accent-200: oklch(0.86 0.055 245);
+  --color-accent-500: oklch(0.58 0.115 248);
   --color-accent-600: oklch(0.51 0.125 248);
   --color-accent-700: oklch(0.43 0.12 248);
 
   --font-sans:
     ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:
+    ui-monospace, 'JetBrains Mono', 'Cascadia Mono', 'SF Mono', Menlo, Consolas, monospace;
+}
+
+/*
+ * The same tokens, turned down. Dark is a real palette rather than an inverted
+ * one: the accent lifts instead of darkening, or it disappears into the page.
+ */
+.dark {
+  --color-paper: oklch(0.19 0.012 260);
+  --color-card: oklch(0.23 0.014 260);
+  --color-ink-100: oklch(0.29 0.014 260);
+  --color-ink-200: oklch(0.33 0.014 260);
+  --color-ink-300: oklch(0.42 0.014 260);
+  --color-ink-400: oklch(0.63 0.014 260);
+  --color-ink-600: oklch(0.76 0.012 260);
+  --color-ink-800: oklch(0.9 0.008 260);
+  --color-ink-900: oklch(0.97 0.004 260);
+
+  --color-accent-100: oklch(0.32 0.055 245);
+  --color-accent-200: oklch(0.4 0.07 245);
+  --color-accent-500: oklch(0.72 0.11 245);
+  --color-accent-600: oklch(0.76 0.115 245);
+  --color-accent-700: oklch(0.82 0.1 245);
 }
 
 html {
@@ -37,4 +64,19 @@ body {
 /* Anchored sections must not land underneath the fixed header. */
 section[id] {
   scroll-margin-top: 5rem;
+}
+
+/* Faint grid behind the opening screen, so the page has a floor to stand on. */
+.grid-backdrop {
+  background-image:
+    linear-gradient(to right, color-mix(in oklch, var(--color-ink-300) 30%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklch, var(--color-ink-300) 30%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

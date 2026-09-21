@@ -3,14 +3,17 @@ import { projects } from '@/data/projects'
 
 export function Projects() {
   return (
-    <Section id="projects" title="Projects">
+    <Section id="projects" index="01" title="Projects">
       <div className="space-y-6">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <article
             key={project.name}
-            className="rounded-lg border border-ink-200 bg-white p-6 transition-shadow hover:shadow-sm"
+            className="group rounded-lg border border-ink-200 bg-card p-6 transition-colors hover:border-accent-500"
           >
-            <div className="flex flex-wrap items-baseline justify-between gap-2">
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <span className="font-mono text-xs text-ink-400">
+                {String(index + 1).padStart(2, '0')}
+              </span>
               <h3 className="text-lg font-semibold tracking-tight text-ink-900">{project.name}</h3>
               <p className="text-sm text-ink-400">{project.tagline}</p>
             </div>
@@ -20,7 +23,7 @@ export function Projects() {
             <ul className="mt-4 space-y-2">
               {project.highlights.map((highlight) => (
                 <li key={highlight.slice(0, 32)} className="flex gap-3 text-sm text-ink-600">
-                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-600" />
+                  <span aria-hidden className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent-500" />
                   <span className="leading-relaxed">{highlight}</span>
                 </li>
               ))}
@@ -30,7 +33,7 @@ export function Projects() {
               {project.stack.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full bg-ink-100 px-2.5 py-1 text-xs text-ink-600"
+                  className="rounded border border-ink-200 px-2 py-0.5 font-mono text-xs text-ink-600"
                 >
                   {item}
                 </span>
@@ -41,9 +44,10 @@ export function Projects() {
               href={project.repo}
               target="_blank"
               rel="noreferrer"
-              className="mt-5 inline-block text-sm font-medium text-accent-700 underline underline-offset-4"
+              className="mt-5 inline-flex items-center gap-2 font-mono text-xs text-accent-700"
             >
-              Read the code
+              <span aria-hidden>{'->'}</span>
+              {project.repo.replace('https://github.com/', 'github.com/')}
             </a>
           </article>
         ))}
