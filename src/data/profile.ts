@@ -5,7 +5,7 @@ export const profile = {
   name: 'Moroesi Ramodupi',
   role: 'Software developer',
   location: 'Durban, South Africa',
-  availability: 'Open to remote work worldwide',
+  availability: 'Open to roles across South Africa, on site or remote',
   // The phone number stays on the CV. This page is public, and a number on a
   // public page is a number in a scraper's list.
   emails: ['moroesiramodupi@gmail.com', 'mavundlamoroesi@gmail.com'],
@@ -19,7 +19,7 @@ export const profile = {
     'The part I enjoy is the part nobody demos. Anyone can show the happy path on a screen. What matters is what the system can tell you at half past four when a debit order came back unpaid and somebody has to explain why.',
   ],
   openTo:
-    'Looking for a remote backend or fintech role. Picking up Docker at the moment, and building CreditHub in Laravel in my own time.',
+    'Looking for backend, full stack or fintech work. Durban based and happy on site, open to hybrid anywhere in South Africa, and set up to work remotely. Picking up Docker at the moment, and building CreditHub in Laravel in my own time.',
 }
 
 /** The three things worth knowing before reading anything else. */
