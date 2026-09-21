@@ -5,19 +5,31 @@ export interface SkillGroup {
 
 export const skills: SkillGroup[] = [
   {
-    heading: 'Server side',
-    items: ['PHP', 'Laravel', 'Layered PHP without a framework', 'REST APIs', 'MySQL and MariaDB'],
+    heading: 'Languages',
+    items: ['PHP', 'JavaScript and TypeScript', 'C#', 'Python', 'SQL'],
   },
   {
-    heading: 'Browser side',
-    items: ['TypeScript', 'React', 'JavaScript', 'Tailwind CSS', 'Vite'],
+    heading: 'Frameworks and libraries',
+    items: ['Laravel', 'ASP.NET Core', 'React', 'WordPress', 'jQuery and AJAX', 'Tailwind CSS'],
   },
   {
-    heading: 'Also worked in',
-    items: ['C# and ASP.NET Core', 'WordPress plugin development', 'SQL Server'],
+    heading: 'Databases',
+    items: ['MySQL and MariaDB', 'SQL Server', 'Entity Framework Core'],
   },
   {
-    heading: 'How I work',
-    items: ['Git and GitHub Actions', 'Pest and PHPUnit', 'Role based access control', 'Audit trails and reporting'],
+    heading: 'APIs and integration',
+    items: [
+      'REST API design and consumption',
+      'Payment gateways: Nupay, Nedbank PayShap',
+      'JSON and XML data handling',
+    ],
+  },
+  {
+    heading: 'Tools',
+    items: ['Git and GitHub', 'Visual Studio and VS Code', 'Postman', 'Swagger', 'GitHub Actions'],
+  },
+  {
+    heading: 'Learning now',
+    items: ['Docker'],
   },
 ]

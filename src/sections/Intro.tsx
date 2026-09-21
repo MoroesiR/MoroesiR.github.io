@@ -4,7 +4,7 @@ export function Intro() {
   return (
     <section id="top" className="py-16">
       <p className="text-sm text-ink-400">
-        {profile.role}, {profile.location}
+        {profile.role} · {profile.location} · {profile.availability}
       </p>
 
       <h1 className="mt-3 text-4xl font-semibold leading-tight tracking-tight text-ink-900 sm:text-5xl">
@@ -25,7 +25,7 @@ export function Intro() {
           See the work
         </a>
         <a
-          href={`mailto:${profile.email}`}
+          href={`mailto:${profile.emails[0]}`}
           className="rounded-md border border-ink-300 px-4 py-2 text-sm font-medium text-ink-800 transition-colors hover:bg-ink-100"
         >
           Get in touch

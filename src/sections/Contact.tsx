@@ -1,18 +1,23 @@
 import { Section } from '@/components/Section'
 import { profile } from '@/data/profile'
 
+interface ContactLink {
+  label: string
+  value: string
+  href: string
+}
+
 export function Contact() {
-  const links = [
-    { label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
+  const links: ContactLink[] = [
+    ...profile.emails.map((email, index) => ({
+      label: index === 0 ? 'Email' : '',
+      value: email,
+      href: `mailto:${email}`,
+    })),
+    { label: 'Phone', value: profile.phone, href: `tel:+27${profile.phone.replace(/\D/g, '').slice(1)}` },
     { label: 'GitHub', value: profile.github.replace('https://', ''), href: profile.github },
-    profile.linkedin
-      ? {
-          label: 'LinkedIn',
-          value: profile.linkedin.replace('https://', ''),
-          href: profile.linkedin,
-        }
-      : null,
-  ].filter((link) => link !== null)
+    { label: 'LinkedIn', value: 'linkedin.com/in/moroesi-ramodupi', href: profile.linkedin },
+  ]
 
   return (
     <Section id="contact" title="Contact">
@@ -20,12 +25,12 @@ export function Contact() {
 
       <dl className="mt-6 space-y-3">
         {links.map((link) => (
-          <div key={link.label} className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+          <div key={link.value} className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
             <dt className="w-20 shrink-0 text-ink-400">{link.label}</dt>
             <dd>
               <a
                 href={link.href}
-                target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
                 rel="noreferrer"
                 className="font-medium text-accent-700 underline underline-offset-4"
               >

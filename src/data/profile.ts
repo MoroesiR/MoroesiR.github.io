@@ -2,16 +2,19 @@
  * Everything personal lives here, so the page components stay about layout.
  */
 export const profile = {
-  name: 'Moroesi Mavundla',
+  name: 'Moroesi Ramodupi',
   role: 'Software developer',
-  location: 'South Africa',
-  email: 'mavundlamoroesi@gmail.com',
+  location: 'Durban, South Africa',
+  availability: 'Open to remote work worldwide',
+  emails: ['moroesiramodupi@gmail.com', 'mavundlamoroesi@gmail.com'],
+  phone: '073 501 7459',
   github: 'https://github.com/MoroesiR',
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/moroesi-ramodupi-654a4b25a',
   headline: 'I build the systems that lend money and keep track of it.',
   summary: [
-    'Two years and seven months of building and maintaining loan management systems: origination, affordability, credit decisions, disbursements and collections, and the reporting that has to account for all of it.',
-    'Most of that work is in PHP and Laravel on the server with React and TypeScript in front of it, against MySQL. The part I care about is the part the user never sees: that the numbers are right, that the audit trail explains them, and that the person who captures a loan is not the person who pays it out.',
+    'Two and a half years on a production loan management platform used every day by consultants, vetting, quality control, collections, auditors and HR, each with their own workflow and their own view of the same file.',
+    'The integrations I have shipped are the ones that move money: Nupay debit order mandates and Nedbank PayShap payments, where a failure has to be traceable afterwards. PHP and MySQL on the server, React and C# in front of it.',
   ],
-  openTo: 'Open to full-time work and contract work, remote or Gauteng based.',
+  openTo:
+    'Looking for a remote backend or fintech role. Picking up Docker at the moment, and building CreditHub in Laravel in my own time.',
 }

@@ -28,23 +28,25 @@ export const projects: Project[] = [
     description:
       'A register for company equipment: what is owned, who has it, and what condition it is in. Built after watching an IT department track laptops and projectors on a spreadsheet.',
     highlights: [
-      'Check-out and check-in against a named employee and department, with expected return dates and overdue warnings.',
-      'Maintenance scheduling with history, and status that moves between available, out and under maintenance.',
-      'A dashboard of live counts and asset value by category.',
+      'The full asset lifecycle: automated status tracking, duplicate serial numbers refused, and availability that updates as equipment moves.',
+      'Checkout against a named employee and department, with overdue indicators and a condition assessment when equipment comes back.',
+      'A dashboard of asset value by category, checkout trends and maintenance schedules, with CSV export.',
+      'A REST API documented with Swagger, so other systems can read the register.',
     ],
-    stack: ['C#', 'ASP.NET Core MVC', 'Entity Framework', 'SQL Server'],
+    stack: ['C#', 'ASP.NET Core 8', 'Entity Framework', 'SQL Server', 'Razor Pages', 'Chart.js'],
     repo: 'https://github.com/MoroesiR/AssetFlow',
   },
   {
     name: 'Loan Calculator Pro',
     tagline: 'WordPress plugin',
     description:
-      'A loan calculator that a lending site can drop into a page: instalments, full amortisation schedules, and an admin area to set the products it prices.',
+      'A loan calculator a lending site can drop into a page: monthly payments, total interest, and the full amortisation schedule rather than only the headline figure.',
     highlights: [
-      'Exposes its own REST API, so the calculator can be used outside the page it ships with.',
-      'Generates the full amortisation schedule rather than only the monthly figure.',
+      'AJAX endpoints secured with nonce verification and input validation, closed to SQL injection and cross-site scripting.',
+      'Every calculation logged, with an admin dashboard showing what visitors are actually pricing.',
+      'REST endpoints built to WordPress standards, so other applications can use the calculator.',
     ],
-    stack: ['PHP', 'WordPress', 'REST API', 'JavaScript'],
+    stack: ['PHP', 'WordPress', 'JavaScript', 'MySQL', 'REST API', 'Chart.js'],
     repo: 'https://github.com/MoroesiR/loan-calculator-pro',
   },
 ]

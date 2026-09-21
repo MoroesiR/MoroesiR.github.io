@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header'
 import { profile } from '@/data/profile'
 import { Contact } from '@/sections/Contact'
+import { Education } from '@/sections/Education'
 import { Experience } from '@/sections/Experience'
 import { Intro } from '@/sections/Intro'
 import { Projects } from '@/sections/Projects'
@@ -16,6 +17,7 @@ export function App() {
         <Projects />
         <Experience />
         <Skills />
+        <Education />
         <Contact />
       </main>
 
