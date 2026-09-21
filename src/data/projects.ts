@@ -5,6 +5,8 @@ export interface Project {
   highlights: string[]
   stack: string[]
   repo: string
+  image?: string
+  imageAlt?: string
 }
 
 export const projects: Project[] = [
@@ -21,6 +23,8 @@ export const projects: Project[] = [
     ],
     stack: ['Laravel', 'PHP', 'React', 'TypeScript', 'MySQL', 'Tailwind'],
     repo: 'https://github.com/MoroesiR/CreditHub',
+    image: '/shots/credithub-dashboard.png',
+    imageAlt: 'The CreditHub dashboard, showing totals for clients, applications and disbursements',
   },
   {
     name: 'AssetFlow',
@@ -35,6 +39,8 @@ export const projects: Project[] = [
     ],
     stack: ['C#', 'ASP.NET Core 8', 'Entity Framework', 'SQL Server', 'Razor Pages', 'Chart.js'],
     repo: 'https://github.com/MoroesiR/AssetFlow',
+    image: '/shots/assetflow-dashboard.png',
+    imageAlt: 'The AssetFlow dashboard, showing asset counts, value by category and checkout trends',
   },
   {
     name: 'Loan Calculator Pro',

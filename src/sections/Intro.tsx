@@ -1,21 +1,46 @@
+import { useState } from 'react'
+
 import { facts, profile } from '@/data/profile'
 
 export function Intro() {
+  // The portrait is optional. If the file is not there, the page keeps its
+  // shape rather than showing a broken image.
+  const [hasPortrait, setHasPortrait] = useState(true)
+
   return (
     <section id="top" className="relative py-20">
       <div aria-hidden className="grid-backdrop absolute inset-x-0 -top-16 -z-10 h-80" />
 
-      <p className="font-mono text-xs text-accent-600">
-        {profile.location} · {profile.availability}
-      </p>
+      <div className="flex flex-col-reverse gap-8 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0 flex-1">
+          <p className="font-mono text-xs text-accent-600">
+            {profile.location} · {profile.availability}
+          </p>
 
-      <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight text-ink-900 sm:text-5xl">
-        {profile.name}
-      </h1>
+          <h1 className="mt-4 text-4xl font-semibold leading-[1.1] tracking-tight text-ink-900 sm:text-5xl">
+            {profile.name}
+          </h1>
 
-      <p className="mt-4 max-w-2xl text-xl leading-snug text-ink-800">{profile.headline}</p>
+          <p className="mt-4 text-xl leading-snug text-ink-800">{profile.headline}</p>
+        </div>
 
-      <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-ink-600">
+        {hasPortrait && (
+          <div className="relative shrink-0">
+            <span
+              aria-hidden
+              className="absolute -bottom-2 -right-2 h-full w-full rounded-lg border border-accent-500"
+            />
+            <img
+              src={profile.portrait}
+              alt={profile.name}
+              onError={() => setHasPortrait(false)}
+              className="relative h-40 w-40 rounded-lg border border-ink-200 object-cover object-top sm:h-48 sm:w-48"
+            />
+          </div>
+        )}
+      </div>
+
+      <div className="mt-8 max-w-2xl space-y-4 text-base leading-relaxed text-ink-600">
         {profile.summary.map((paragraph) => (
           <p key={paragraph.slice(0, 32)}>{paragraph}</p>
         ))}
