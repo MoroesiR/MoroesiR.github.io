@@ -13,7 +13,7 @@ export const profile = {
   headline: 'I build the systems that lend money and keep track of it.',
   summary: [
     'Two and a half years on a production loan management platform used every day by consultants, vetting, quality control, collections, auditors and HR, each with their own workflow and their own view of the same file.',
-    'The integrations I have shipped are the ones that move money: Nupay debit order mandates and Nedbank PayShap payments, where a failure has to be traceable afterwards. PHP and MySQL on the server, React and C# in front of it.',
+    'Not all of it is one stack. Some of the systems I work on are PHP and MySQL, others are C# on .NET with React in front, and the integrations run through both: Nupay debit order mandates and Nedbank PayShap payments, where a failure has to be traceable afterwards.',
   ],
   openTo:
     'Looking for a remote backend or fintech role. Picking up Docker at the moment, and building CreditHub in Laravel in my own time.',

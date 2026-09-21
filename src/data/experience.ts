@@ -14,6 +14,7 @@ export const experience: Role[] = [
     period: 'February 2024 to now',
     points: [
       'Maintain and extend a loan management platform used daily by consultants, vetting, quality control, auditors, collections and HR, with role based workflows and live sync between departments.',
+      'Work across both stacks the business runs on: PHP with MySQL on some of the systems, C# on .NET with React on others.',
       'Integrated the Nupay and Nedbank PayShap APIs for debit order mandates, loan disbursements, recruiter commissions and client refunds, with error handling and transaction logging so a failed payment can be traced afterwards.',
       'Built the REST endpoints the parts of the system talk to each other through: mandate checks, settlement processing and data exchange across companies.',
       'Built a client verification flow that automates employment checks, mandate validation and document processing, taking a large part of the manual vetting away.',
