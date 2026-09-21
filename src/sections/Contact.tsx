@@ -14,7 +14,6 @@ export function Contact() {
       value: email,
       href: `mailto:${email}`,
     })),
-    { label: 'Phone', value: profile.phone, href: `tel:+27${profile.phone.replace(/\D/g, '').slice(1)}` },
     { label: 'GitHub', value: profile.github.replace('https://', ''), href: profile.github },
     { label: 'LinkedIn', value: 'linkedin.com/in/moroesi-ramodupi', href: profile.linkedin },
   ]

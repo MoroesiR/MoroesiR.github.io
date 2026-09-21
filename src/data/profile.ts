@@ -6,8 +6,9 @@ export const profile = {
   role: 'Software developer',
   location: 'Durban, South Africa',
   availability: 'Open to remote work worldwide',
+  // The phone number stays on the CV. This page is public, and a number on a
+  // public page is a number in a scraper's list.
   emails: ['moroesiramodupi@gmail.com', 'mavundlamoroesi@gmail.com'],
-  phone: '073 501 7459',
   github: 'https://github.com/MoroesiR',
   linkedin: 'https://www.linkedin.com/in/moroesi-ramodupi-654a4b25a',
   headline: 'I build the systems that lend money and keep track of it.',
