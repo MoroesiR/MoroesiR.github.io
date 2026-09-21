@@ -8,25 +8,27 @@ export function Projects() {
         {projects.map((project, index) => (
           <article
             key={project.name}
-            className="overflow-hidden rounded-lg border border-ink-200 bg-card transition-colors hover:border-accent-500"
+            className="group overflow-hidden rounded-xl border border-ink-200 bg-card shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
           >
+            <span aria-hidden className="rule block h-1 w-full" />
+
             {project.image && (
               <div className="border-b border-ink-200 bg-ink-100">
                 <img
                   src={project.image}
                   alt={project.imageAlt ?? ''}
                   loading="lazy"
-                  className="h-52 w-full object-cover object-top sm:h-64"
+                  className="h-52 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02] sm:h-64"
                 />
               </div>
             )}
 
             <div className="p-6">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <span className="font-mono text-xs text-ink-400">
+                <span className="font-mono text-xs text-accent-600">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <h3 className="text-lg font-semibold tracking-tight text-ink-900">{project.name}</h3>
+                <h3 className="text-xl font-semibold tracking-tight text-ink-900">{project.name}</h3>
                 <p className="text-sm text-ink-400">{project.tagline}</p>
               </div>
 
@@ -45,7 +47,7 @@ export function Projects() {
                 {project.stack.map((item) => (
                   <span
                     key={item}
-                    className="rounded border border-ink-200 px-2 py-0.5 font-mono text-xs text-ink-600"
+                    className="rounded-full border border-accent-200 bg-accent-100 px-2.5 py-0.5 font-mono text-xs text-accent-700"
                   >
                     {item}
                   </span>
@@ -56,7 +58,7 @@ export function Projects() {
                 href={project.repo}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-5 inline-flex items-center gap-2 font-mono text-xs text-accent-700"
+                className="mt-5 inline-flex items-center gap-2 font-mono text-xs text-accent-700 transition-transform duration-200 hover:translate-x-0.5"
               >
                 <span aria-hidden>{'->'}</span>
                 {project.repo.replace('https://github.com/', 'github.com/')}

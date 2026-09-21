@@ -16,7 +16,7 @@ function initialTheme(): Theme {
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
 }
 
-export function ThemeToggle() {
+export function ThemeToggle({ dark = false }: { dark?: boolean }) {
   const [theme, setTheme] = useState<Theme>(initialTheme)
 
   useEffect(() => {
@@ -29,7 +29,11 @@ export function ThemeToggle() {
       type="button"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       aria-label={theme === 'dark' ? 'Switch to the light theme' : 'Switch to the dark theme'}
-      className="rounded-md border border-ink-200 px-2 py-1 font-mono text-xs text-ink-600 transition-colors hover:border-accent-500 hover:text-accent-700"
+      className={`rounded-md border px-2 py-1 font-mono text-xs transition-colors ${
+        dark
+          ? 'border-white/25 text-white/70 hover:border-spark-400 hover:text-spark-400'
+          : 'border-ink-200 text-ink-600 hover:border-accent-500 hover:text-accent-700'
+      }`}
     >
       {theme === 'dark' ? 'light' : 'dark'}
     </button>

@@ -10,7 +10,7 @@ interface ContactLink {
 export function Contact() {
   const links: ContactLink[] = [
     ...profile.emails.map((email, index) => ({
-      label: index === 0 ? 'Email' : '',
+      label: index === 0 ? 'Email' : 'Also',
       value: email,
       href: `mailto:${email}`,
     })),
@@ -20,25 +20,27 @@ export function Contact() {
 
   return (
     <Section id="contact" index="05" title="Contact">
-      <p className="max-w-xl text-base leading-relaxed text-ink-600">{profile.openTo}</p>
+      <div className="rounded-xl border border-ink-200 bg-card p-6 shadow-sm">
+        <p className="max-w-xl text-base leading-relaxed text-ink-600">{profile.openTo}</p>
 
-      <dl className="mt-6 space-y-3">
-        {links.map((link) => (
-          <div key={link.value} className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-            <dt className="w-20 shrink-0 font-mono text-xs text-ink-400">{link.label}</dt>
-            <dd>
-              <a
-                href={link.href}
-                target={link.href.startsWith('http') ? '_blank' : undefined}
-                rel="noreferrer"
-                className="font-medium text-accent-700 underline underline-offset-4"
-              >
-                {link.value}
-              </a>
-            </dd>
-          </div>
-        ))}
-      </dl>
+        <dl className="mt-6 grid gap-4 sm:grid-cols-2">
+          {links.map((link) => (
+            <div key={link.value}>
+              <dt className="font-mono text-xs text-ink-400">{link.label}</dt>
+              <dd className="mt-1">
+                <a
+                  href={link.href}
+                  target={link.href.startsWith('http') ? '_blank' : undefined}
+                  rel="noreferrer"
+                  className="break-all text-sm font-medium text-accent-700 underline underline-offset-4 decoration-accent-200 transition-colors hover:decoration-accent-600"
+                >
+                  {link.value}
+                </a>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
     </Section>
   )
 }

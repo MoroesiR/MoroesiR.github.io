@@ -12,7 +12,7 @@ export function App() {
     <>
       <Header />
 
-      <main className="mx-auto w-full max-w-3xl px-6">
+      <main>
         <Intro />
         <Projects />
         <Experience />
@@ -21,8 +21,8 @@ export function App() {
         <Contact />
       </main>
 
-      <footer className="border-t border-ink-200">
-        <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center justify-between gap-2 px-6 py-8 font-mono text-xs text-ink-400">
+      <footer className="bg-night-900">
+        <div className="mx-auto flex w-full max-w-3xl flex-wrap items-center justify-between gap-2 px-6 py-10 font-mono text-xs text-white/45">
           <span>{profile.name}</span>
           <span>React · TypeScript · Tailwind</span>
         </div>

@@ -1,12 +1,14 @@
 @import 'tailwindcss';
 
 /*
- * One neutral for text and chrome, one accent for anything clickable. Colours
- * are variables rather than fixed utilities so the dark theme is a different
- * set of values, not a second set of classes on every element.
+ * One neutral for text and chrome, one accent for anything clickable, one
+ * spark used only where two colours have to meet. Colours are variables rather
+ * than fixed utilities so the dark theme is a different set of values, not a
+ * second set of classes on every element.
  */
 @theme {
   --color-paper: oklch(0.99 0.003 106);
+  --color-tint: oklch(0.965 0.008 255);
   --color-card: oklch(1 0 0);
   --color-ink-100: oklch(0.95 0.004 265);
   --color-ink-200: oklch(0.89 0.006 265);
@@ -22,6 +24,13 @@
   --color-accent-600: oklch(0.51 0.125 248);
   --color-accent-700: oklch(0.43 0.12 248);
 
+  --color-spark-400: oklch(0.78 0.13 185);
+  --color-spark-500: oklch(0.7 0.13 185);
+
+  /* The hero and the footer keep this colour in both themes. */
+  --color-night-800: oklch(0.24 0.035 258);
+  --color-night-900: oklch(0.19 0.032 258);
+
   --font-sans:
     ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-mono:
@@ -33,21 +42,22 @@
  * one: the accent lifts instead of darkening, or it disappears into the page.
  */
 .dark {
-  --color-paper: oklch(0.19 0.012 260);
-  --color-card: oklch(0.23 0.014 260);
-  --color-ink-100: oklch(0.29 0.014 260);
-  --color-ink-200: oklch(0.33 0.014 260);
+  --color-paper: oklch(0.17 0.012 260);
+  --color-tint: oklch(0.21 0.016 260);
+  --color-card: oklch(0.22 0.016 260);
+  --color-ink-100: oklch(0.28 0.014 260);
+  --color-ink-200: oklch(0.32 0.014 260);
   --color-ink-300: oklch(0.42 0.014 260);
-  --color-ink-400: oklch(0.63 0.014 260);
-  --color-ink-600: oklch(0.76 0.012 260);
-  --color-ink-800: oklch(0.9 0.008 260);
+  --color-ink-400: oklch(0.64 0.014 260);
+  --color-ink-600: oklch(0.77 0.012 260);
+  --color-ink-800: oklch(0.91 0.008 260);
   --color-ink-900: oklch(0.97 0.004 260);
 
-  --color-accent-100: oklch(0.32 0.055 245);
+  --color-accent-100: oklch(0.31 0.055 245);
   --color-accent-200: oklch(0.4 0.07 245);
   --color-accent-500: oklch(0.72 0.11 245);
   --color-accent-600: oklch(0.76 0.115 245);
-  --color-accent-700: oklch(0.82 0.1 245);
+  --color-accent-700: oklch(0.83 0.1 245);
 }
 
 html {
@@ -63,20 +73,51 @@ body {
 
 /* Anchored sections must not land underneath the fixed header. */
 section[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 4rem;
 }
 
-/* Faint grid behind the opening screen, so the page has a floor to stand on. */
-.grid-backdrop {
+/*
+ * The opening band: a dark ground, a grid that fades out, and one pool of
+ * colour behind the name so the page does not start as a white sheet.
+ */
+.hero {
+  background-color: var(--color-night-900);
   background-image:
-    linear-gradient(to right, color-mix(in oklch, var(--color-ink-300) 30%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklch, var(--color-ink-300) 30%, transparent) 1px, transparent 1px);
-  background-size: 28px 28px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black, transparent 75%);
+    radial-gradient(
+      ellipse 70% 90% at 15% 0%,
+      color-mix(in oklch, var(--color-accent-500) 38%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 60% 80% at 95% 20%,
+      color-mix(in oklch, var(--color-spark-500) 24%, transparent),
+      transparent 60%
+    );
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black, transparent 80%);
+}
+
+.rule {
+  background-image: linear-gradient(
+    to right,
+    var(--color-accent-500),
+    var(--color-spark-500),
+    transparent
+  );
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
   }
 }
