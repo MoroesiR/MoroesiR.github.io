@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+import { CvButton } from '@/components/CvButton'
 import { facts, profile } from '@/data/profile'
 
 export function Intro() {
@@ -40,7 +41,7 @@ export function Intro() {
                 src={profile.portrait}
                 alt={profile.name}
                 onError={() => setHasPortrait(false)}
-                className="relative h-40 w-40 rounded-xl border border-white/20 object-cover object-top sm:h-48 sm:w-48"
+                className="relative h-40 w-40 rounded-xl border border-white/20 object-cover sm:h-48 sm:w-48"
               />
             </div>
           )}
@@ -77,6 +78,7 @@ export function Intro() {
           >
             Get in touch
           </a>
+          <CvButton />
         </div>
       </div>
     </section>

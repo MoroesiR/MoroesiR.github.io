@@ -10,6 +10,7 @@ export const profile = {
   // public page is a number in a scraper's list.
   emails: ['moroesiramodupi@gmail.com', 'mavundlamoroesi@gmail.com'],
   portrait: '/portrait.jpg',
+  cv: '/moroesi-ramodupi-cv.pdf',
   github: 'https://github.com/MoroesiR',
   linkedin: 'https://www.linkedin.com/in/moroesi-ramodupi-654a4b25a',
   headline: 'I build the systems that lend money and keep track of it.',
