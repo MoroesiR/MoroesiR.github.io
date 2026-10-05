@@ -32,16 +32,12 @@ export function Intro() {
           </div>
 
           {hasPortrait && (
-            <div className="relative shrink-0">
-              <span
-                aria-hidden
-                className="absolute -bottom-2 -right-2 h-full w-full rounded-xl border border-spark-500/60"
-              />
+            <div className="shrink-0">
               <img
                 src={profile.portrait}
                 alt={profile.name}
                 onError={() => setHasPortrait(false)}
-                className="relative h-40 w-40 rounded-xl border border-white/20 object-cover sm:h-48 sm:w-48"
+                className="h-40 w-40 rounded-xl object-cover sm:h-48 sm:w-48"
               />
             </div>
           )}
