@@ -1,11 +1,6 @@
 @import 'tailwindcss';
 
-/*
- * One neutral for text and chrome, one accent for anything clickable, one
- * spark used only where two colours have to meet. Colours are variables rather
- * than fixed utilities so the dark theme is a different set of values, not a
- * second set of classes on every element.
- */
+/* Light palette. The dark block below redefines the same tokens. */
 @theme {
   --color-paper: oklch(0.99 0.003 106);
   --color-tint: oklch(0.965 0.008 255);
@@ -37,10 +32,7 @@
     ui-monospace, 'JetBrains Mono', 'Cascadia Mono', 'SF Mono', Menlo, Consolas, monospace;
 }
 
-/*
- * The same tokens, turned down. Dark is a real palette rather than an inverted
- * one: the accent lifts instead of darkening, or it disappears into the page.
- */
+/* Dark palette. The accent lifts rather than darkens, or it vanishes. */
 .dark {
   --color-paper: oklch(0.17 0.012 260);
   --color-tint: oklch(0.21 0.016 260);
@@ -71,15 +63,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Anchored sections must not land underneath the fixed header. */
+/* Clear the sticky header when jumping to a section. */
 section[id] {
   scroll-margin-top: 4rem;
 }
 
-/*
- * The opening band: a dark ground, a grid that fades out, and one pool of
- * colour behind the name so the page does not start as a white sheet.
- */
+/* Opening band: dark ground, two pools of colour, grid over the top. */
 .hero {
   background-color: var(--color-night-900);
   background-image:

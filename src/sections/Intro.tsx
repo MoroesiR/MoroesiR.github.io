@@ -4,8 +4,7 @@ import { CvButton } from '@/components/CvButton'
 import { facts, profile } from '@/data/profile'
 
 export function Intro() {
-  // The portrait is optional. If the file is not there, the page keeps its
-  // shape rather than showing a broken image.
+  // Dropped if the file is missing, rather than showing a broken image.
   const [hasPortrait, setHasPortrait] = useState(true)
 
   return (

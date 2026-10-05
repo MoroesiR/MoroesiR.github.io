@@ -1,9 +1,6 @@
 import type { ReactNode } from 'react'
 
-/**
- * Full width band, fixed width contents. Alternating the band colour is what
- * stops the page reading as one long sheet of text.
- */
+// Full width band, fixed width contents.
 export function Section({
   id,
   index,

@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { profile } from '@/data/profile'
 
-/**
- * Only rendered once the file is actually there. A download button that
- * answers with a 404 page is worse than no button at all.
- */
+// Hidden until the file is there, so the button never 404s.
 export function CvButton({ tone = 'dark' }: { tone?: 'dark' | 'light' }) {
   const [available, setAvailable] = useState(false)
 

@@ -2,10 +2,7 @@ import { useEffect, useState } from 'react'
 
 type Theme = 'light' | 'dark'
 
-/**
- * Remembers the choice, and falls back to whatever the operating system is
- * already set to rather than assuming everyone wants a bright page.
- */
+// Stored choice first, then whatever the operating system is set to.
 function initialTheme(): Theme {
   const stored = localStorage.getItem('theme')
 

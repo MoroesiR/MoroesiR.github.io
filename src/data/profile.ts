@@ -1,13 +1,9 @@
-/**
- * Everything personal lives here, so the page components stay about layout.
- */
 export const profile = {
   name: 'Moroesi Ramodupi',
   role: 'Software developer',
   location: 'Durban, South Africa',
   availability: 'Open to roles across South Africa, on site or remote',
-  // The phone number stays on the CV. This page is public, and a number on a
-  // public page is a number in a scraper's list.
+  // Phone number stays on the CV, off the page.
   emails: ['moroesiramodupi@gmail.com', 'mavundlamoroesi@gmail.com'],
   portrait: '/portrait.jpg',
   cv: '/moroesi-ramodupi-cv.pdf',
@@ -23,9 +19,8 @@ export const profile = {
     'Looking for backend, full stack or fintech work. Durban based and happy on site, open to hybrid anywhere in South Africa, and set up to work remotely. Picking up Docker at the moment, and building CreditHub in Laravel in my own time.',
 }
 
-/** The three things worth knowing before reading anything else. */
 export const facts = [
-  { value: '2 yrs 7 mo', label: 'on a lending platform in production, not a demo' },
+  { value: '2 yrs 8 mo', label: 'on a lending platform in production, not a demo' },
   { value: '2 gateways', label: 'Nupay and Nedbank PayShap, integrated end to end' },
   { value: '6 departments', label: 'working one file, each with their own view of it' },
 ]

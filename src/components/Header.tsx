@@ -12,8 +12,7 @@ const LINKS = [
 ]
 
 export function Header() {
-  // Transparent over the dark opening band, solid once the page has moved past
-  // it. A bar with its own background sitting on the hero looks bolted on.
+  // Transparent over the hero, solid once scrolled past it.
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
