@@ -30,6 +30,6 @@ export const skills: SkillGroup[] = [
   },
   {
     heading: 'Learning now',
-    items: ['Docker'],
+    items: ['Docker', 'AWS'],
   },
 ]

@@ -37,22 +37,9 @@ export const projects: Project[] = [
       'A dashboard of asset value by category, checkout trends and maintenance schedules, with CSV export.',
       'A REST API documented with Swagger, so other systems can read the register.',
     ],
-    stack: ['C#', 'ASP.NET Core 8', 'Entity Framework', 'SQL Server', 'Razor Pages', 'Chart.js'],
+    stack: ['C#', 'ASP.NET Core 10', 'Entity Framework', 'SQL Server', 'Razor Pages', 'Chart.js'],
     repo: 'https://github.com/MoroesiR/AssetFlow',
     image: '/shots/assetflow-dashboard.png',
     imageAlt: 'The AssetFlow dashboard, showing asset counts, value by category and checkout trends',
-  },
-  {
-    name: 'Loan Calculator Pro',
-    tagline: 'WordPress plugin',
-    description:
-      'A loan calculator a lending site can drop into a page: monthly payments, total interest, and the full amortisation schedule rather than only the headline figure.',
-    highlights: [
-      'AJAX endpoints secured with nonce verification and input validation, closed to SQL injection and cross-site scripting.',
-      'Every calculation logged, with an admin dashboard showing what visitors are actually pricing.',
-      'REST endpoints built to WordPress standards, so other applications can use the calculator.',
-    ],
-    stack: ['PHP', 'WordPress', 'JavaScript', 'MySQL', 'REST API', 'Chart.js'],
-    repo: 'https://github.com/MoroesiR/loan-calculator-pro',
   },
 ]
