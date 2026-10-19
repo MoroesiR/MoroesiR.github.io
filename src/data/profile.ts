@@ -11,7 +11,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/moroesi-ramodupi-654a4b25a',
   headline: 'I build the systems that lend money and keep track of it.',
   summary: [
-    'Since February 2024 I have worked on a production loan management platform used every day by consultants, vetting, quality control, collections, auditors and HR, each with their own workflow and their own view of the same file.',
+    'Since February 2024 I have worked on internal loan management systems for 12 companies, where consultants, vetting, quality control, collections, auditors and HR each work the same file from their own view. A new company means a new system to build.',
     'Not all of it is one stack. Some of the systems I work on are PHP and MySQL, others are C# on .NET with React in front, and the integrations run through both: Nupay debit order mandates and Nedbank PayShap payments, where a failure has to be traceable afterwards.',
     'The part I enjoy is the part nobody demos. Anyone can show the happy path on a screen. What matters is what the system can tell you at half past four when a debit order came back unpaid and somebody has to explain why.',
   ],
