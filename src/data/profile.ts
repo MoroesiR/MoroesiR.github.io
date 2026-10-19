@@ -4,7 +4,7 @@ export const profile = {
   location: 'Durban, South Africa',
   availability: 'Open to roles across South Africa, on site or remote',
   // Phone number stays on the CV, off the page.
-  emails: ['moroesiramodupi@gmail.com', 'mavundlamoroesi@gmail.com'],
+  emails: ['moroesiramodupi@gmail.com'],
   portrait: '/portrait.jpg',
   cv: '/moroesi-ramodupi-cv.pdf',
   github: 'https://github.com/MoroesiR',
