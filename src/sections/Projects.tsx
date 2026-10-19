@@ -54,15 +54,28 @@ export function Projects() {
                 ))}
               </div>
 
-              <a
-                href={project.repo}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-5 inline-flex items-center gap-2 font-mono text-xs text-accent-700 transition-transform duration-200 hover:translate-x-0.5"
-              >
-                <span aria-hidden>{'->'}</span>
-                {project.repo.replace('https://github.com/', 'github.com/')}
-              </a>
+              <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 font-mono text-xs text-accent-700 transition-transform duration-200 hover:translate-x-0.5"
+                >
+                  <span aria-hidden>{'->'}</span>
+                  {project.repo.replace('https://github.com/', 'github.com/')}
+                </a>
+
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-accent-600 px-3 py-1 text-xs font-medium text-paper transition-colors hover:bg-accent-700"
+                  >
+                    Open the live demo
+                  </a>
+                )}
+              </div>
             </div>
           </article>
         ))}

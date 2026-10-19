@@ -5,6 +5,7 @@ export interface Project {
   highlights: string[]
   stack: string[]
   repo: string
+  demo?: string
   image?: string
   imageAlt?: string
 }
@@ -23,6 +24,7 @@ export const projects: Project[] = [
     ],
     stack: ['Laravel', 'PHP', 'React', 'TypeScript', 'MySQL', 'Tailwind'],
     repo: 'https://github.com/MoroesiR/CreditHub',
+    demo: 'https://credithub-demo.onrender.com',
     image: '/shots/credithub-dashboard.png',
     imageAlt: 'The CreditHub dashboard, showing totals for clients, applications and disbursements',
   },
