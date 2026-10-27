@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 
 import { profile } from '@/data/profile'
 
-// Hidden until the file is there, so the button never 404s.
 export function CvButton({ tone = 'dark' }: { tone?: 'dark' | 'light' }) {
   const [available, setAvailable] = useState(false)
 

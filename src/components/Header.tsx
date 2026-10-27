@@ -12,7 +12,6 @@ const LINKS = [
 ]
 
 export function Header() {
-  // Transparent over the hero, solid once scrolled past it.
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {

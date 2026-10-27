@@ -3,7 +3,6 @@ export const profile = {
   role: 'Software developer',
   location: 'Durban, South Africa',
   availability: 'Open to remote or Durban hybrid',
-  // Phone number stays on the CV, off the page.
   emails: ['moroesiramodupi@gmail.com'],
   portrait: '/portrait.jpg',
   cv: '/moroesi-ramodupi-cv.pdf',

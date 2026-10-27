@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 
-// Full width band, fixed width contents.
 export function Section({
   id,
   index,
