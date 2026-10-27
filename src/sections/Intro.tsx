@@ -4,7 +4,6 @@ import { CvButton } from '@/components/CvButton'
 import { facts, profile } from '@/data/profile'
 
 export function Intro() {
-  // Dropped if the file is missing, rather than showing a broken image.
   const [hasPortrait, setHasPortrait] = useState(true)
 
   return (
@@ -54,7 +53,9 @@ export function Intro() {
               key={fact.label}
               className="rounded-lg border border-white/12 bg-white/5 p-4 backdrop-blur-sm"
             >
-              <dt className="font-mono text-lg font-semibold text-spark-400">{fact.value}</dt>
+              <dt suppressHydrationWarning className="font-mono text-lg font-semibold text-spark-400">
+                {fact.value}
+              </dt>
               <dd className="mt-1 text-sm leading-snug text-white/65">{fact.label}</dd>
             </div>
           ))}

@@ -14,7 +14,6 @@
       content="rvaPlSGGz9B_JpQqJRdURJK99LgBFNsXac0BjwvuRFI"
     />
 
-    <!-- Link previews -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://moroesir.github.io/" />
     <meta property="og:title" content="Moroesi Ramodupi, software developer" />
@@ -22,9 +21,12 @@
       property="og:description"
       content="Over two years building loan management systems and payment integrations for 12 companies. PHP, Laravel, React, TypeScript, C# and AWS."
     />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://moroesir.github.io/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Moroesi Ramodupi, software developer in Durban" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Person schema -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -32,6 +34,7 @@
         "name": "Moroesi Ramodupi",
         "jobTitle": "Software Developer",
         "url": "https://moroesir.github.io/",
+        "image": "https://moroesir.github.io/portrait.jpg",
         "email": "mailto:moroesiramodupi@gmail.com",
         "address": {
           "@type": "PostalAddress",
@@ -68,6 +71,15 @@
     </script>
 
     <title>Moroesi Ramodupi | Software Developer</title>
+
+    <script>
+      try {
+        var theme = localStorage.getItem('theme')
+        if (theme === 'dark' || (!theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark')
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

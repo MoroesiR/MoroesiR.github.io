@@ -1,38 +1,40 @@
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 
-type Theme = 'light' | 'dark'
+const listeners = new Set<() => void>()
 
-// Stored choice first, then whatever the operating system is set to.
-function initialTheme(): Theme {
-  const stored = localStorage.getItem('theme')
+function subscribe(listener: () => void) {
+  listeners.add(listener)
 
-  if (stored === 'light' || stored === 'dark') {
-    return stored
+  return () => {
+    listeners.delete(listener)
   }
+}
 
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+function isDark() {
+  return document.documentElement.classList.contains('dark')
+}
+
+function setDark(dark: boolean) {
+  document.documentElement.classList.toggle('dark', dark)
+  localStorage.setItem('theme', dark ? 'dark' : 'light')
+  listeners.forEach((listener) => listener())
 }
 
 export function ThemeToggle({ dark = false }: { dark?: boolean }) {
-  const [theme, setTheme] = useState<Theme>(initialTheme)
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark')
-    localStorage.setItem('theme', theme)
-  }, [theme])
+  const darkTheme = useSyncExternalStore(subscribe, isDark, () => false)
 
   return (
     <button
       type="button"
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      aria-label={theme === 'dark' ? 'Switch to the light theme' : 'Switch to the dark theme'}
+      onClick={() => setDark(!darkTheme)}
+      aria-label={darkTheme ? 'Switch to the light theme' : 'Switch to the dark theme'}
       className={`rounded-md border px-2 py-1 font-mono text-xs transition-colors ${
         dark
           ? 'border-white/25 text-white/70 hover:border-spark-400 hover:text-spark-400'
           : 'border-ink-200 text-ink-600 hover:border-accent-500 hover:text-accent-700'
       }`}
     >
-      {theme === 'dark' ? 'light' : 'dark'}
+      {darkTheme ? 'light' : 'dark'}
     </button>
   )
 }
