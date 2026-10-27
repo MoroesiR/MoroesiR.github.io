@@ -14,7 +14,7 @@ export const skills: SkillGroup[] = [
   },
   {
     heading: 'Databases',
-    items: ['MySQL and MariaDB', 'SQL Server', 'Entity Framework Core'],
+    items: ['MySQL and MariaDB: indexing and migrations', 'SQL Server', 'Entity Framework Core'],
   },
   {
     heading: 'APIs and integration',
@@ -25,11 +25,11 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    heading: 'Tools',
-    items: ['Git and GitHub', 'Visual Studio and VS Code', 'Postman', 'Swagger', 'GitHub Actions'],
+    heading: 'Cloud and DevOps',
+    items: ['AWS: S3, CodeDeploy, load balancing', 'GitHub Actions', 'Docker, still learning'],
   },
   {
-    heading: 'Learning now',
-    items: ['Docker', 'AWS'],
+    heading: 'Tools',
+    items: ['Git and GitHub', 'Visual Studio and VS Code', 'Postman', 'Swagger', 'Chrome DevTools'],
   },
 ]

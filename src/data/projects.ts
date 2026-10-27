@@ -22,7 +22,7 @@ export const projects: Project[] = [
       'Every state change is written to an append-only audit trail, so any file can be explained after the fact.',
       'Tests over the money paths, formatting and type checks on both applications, all of it run by CI on every push.',
     ],
-    stack: ['Laravel', 'PHP', 'React', 'TypeScript', 'MySQL', 'Tailwind'],
+    stack: ['Laravel', 'PHP 8.4', 'React 19', 'TypeScript', 'MySQL', 'Tailwind', 'Pest', 'GitHub Actions'],
     repo: 'https://github.com/MoroesiR/CreditHub',
     demo: 'https://credithub-demo.onrender.com',
     image: '/shots/credithub-dashboard.png',

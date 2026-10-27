@@ -2,7 +2,7 @@ export const profile = {
   name: 'Moroesi Ramodupi',
   role: 'Software developer',
   location: 'Durban, South Africa',
-  availability: 'Open to roles across South Africa, on site or remote',
+  availability: 'Open to remote or Durban hybrid',
   // Phone number stays on the CV, off the page.
   emails: ['moroesiramodupi@gmail.com'],
   portrait: '/portrait.jpg',
@@ -11,12 +11,12 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/moroesi-ramodupi-654a4b25a',
   headline: 'I build the systems that lend money and keep track of it.',
   summary: [
-    'Since February 2024 I have worked on internal loan management systems for 12 companies, where consultants, vetting, quality control, collections, auditors and HR each work the same file from their own view. A new company means a new system to build.',
-    'Not all of it is one stack. Some of the systems I work on are PHP and MySQL, others are C# on .NET with React in front, and the integrations run through both: Nupay debit order mandates and Nedbank PayShap payments, where a failure has to be traceable afterwards.',
+    'Since February 2024 I have worked on internal loan management systems for 12 companies, where consultants, vetting, quality control, pay master, auditors, collections and HR each work the same file from their own view. A new company means a new system to build.',
+    'Not all of it is one stack. Some of the systems I work on are PHP and MySQL, others are C# on .NET with React in front, and the integrations run through both: Nupay debit order mandates and Nedbank PayShap payments, built so a payment can be retried without being paid twice, and traced afterwards.',
     'The part I enjoy is the part nobody demos. Anyone can show the happy path on a screen. What matters is what the system can tell you at half past four when a debit order came back unpaid and somebody has to explain why.',
   ],
   openTo:
-    'Looking for backend, full stack or fintech work. Durban based and happy on site, open to hybrid anywhere in South Africa, and set up to work remotely. Picking up Docker and AWS at the moment, and building CreditHub in Laravel in my own time.',
+    'Looking for a backend or fintech role where I can keep building toward senior engineering. Durban based, open to remote work or a hybrid role in Durban. At work I am one of two developers moving our systems onto AWS, and in my own time I build CreditHub in Laravel.',
 }
 
 const STARTED = new Date(2024, 1)
@@ -34,5 +34,5 @@ function tenure(): string {
 export const facts = [
   { value: tenure(), label: 'on a lending platform in production, not a demo' },
   { value: '2 gateways', label: 'Nupay and Nedbank PayShap, integrated end to end' },
-  { value: '6 departments', label: 'working one file, each with their own view of it' },
+  { value: '7 departments', label: 'working one file, each with their own view of it' },
 ]
